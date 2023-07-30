@@ -4,6 +4,7 @@ import 'package:netflix_ui_flutter/screens/components/play_button.dart';
 import 'package:netflix_ui_flutter/screens/home/components/rank_poster.dart';
 
 import '../components/label_icon.dart';
+import 'components/poster.dart';
 
 class HomeScreen extends StatefulWidget {
 
@@ -135,6 +136,41 @@ class _HomeScreenState extends State<HomeScreen> {
                             rank: (index + 1).toString(),
                             posterUrl: posters[index]
                           )
+                        ),
+                      )
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.only(bottom: 40.0, left: 10.0),
+            sliver: SliverToBoxAdapter(
+              child: Container(
+                height: 200.0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "TV ",
+                            style: TextStyle(fontWeight: FontWeight.bold)
+                          ),
+                          TextSpan(text: "프로그램·로맨스")
+                        ],
+                        style: TextStyle(fontSize: 18.0)
+                      )
+                    ),
+                    SizedBox(height: 10.0),
+                    Expanded(
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: List.generate(
+                          posters.length,
+                          (index) => Poster(posterUrl: posters[index]),
                         ),
                       )
                     )
