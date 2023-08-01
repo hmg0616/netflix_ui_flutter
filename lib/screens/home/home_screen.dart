@@ -325,7 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       GestureDetector(
                         behavior: HitTestBehavior.translucent,
                         onTap: () {
-                          Navigator.pushNamed(context, DetailScreen.routeName)
+                          Navigator.pushNamed(context, DetailScreen.routeName);
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
