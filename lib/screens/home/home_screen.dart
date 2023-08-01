@@ -5,6 +5,7 @@ import 'package:netflix_ui_flutter/screens/components/small_sub_text.dart';
 import 'package:netflix_ui_flutter/screens/home/components/rank_poster.dart';
 
 import '../components/label_icon.dart';
+import '../detail/detail_screen.dart';
 import 'components/poster.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -323,7 +324,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       Divider(),
                       GestureDetector(
                         behavior: HitTestBehavior.translucent,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, DetailScreen.routeName)
+                        },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
